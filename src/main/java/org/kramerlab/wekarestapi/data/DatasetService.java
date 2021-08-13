@@ -45,17 +45,15 @@ public class DatasetService {
         try {
             Dao sqlDao = new Dao();
             InstanceQuery instQ = sqlDao.setConnectionDB();            
-            instQ.setCustomPropsFile(new File("src/main/resources/DatabaseUtils.props"));                        
-           
-            instQ.execute(query);   
+            instQ.setCustomPropsFile(new File("src/main/resources/DatabaseUtils.props"));                                   
+            
+            instQ.execute(query); 
             ResultSet rs = instQ.getResultSet();
             ResultSetHelper rsh = new ResultSetHelper(rs);
-            
             resultData = rsh.getCells(); //get values of query
-            nameColums = rsh.getColumnNames();//get columns name 
+            nameColums = rsh.getColumnNames();//get columns name                                                            
             
-            instances = InstanceQuery.retrieveInstances(instQ,rs);
-            instQ.disconnectFromDatabase();            
+            instances = instQ.retrieveInstances(query);            
         }catch (Exception ex) {
             Logger.getLogger(DatasetService.class.getName()).log(Level.SEVERE, null, ex);
         }        
