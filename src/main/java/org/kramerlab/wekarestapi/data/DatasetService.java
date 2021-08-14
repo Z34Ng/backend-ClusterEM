@@ -94,7 +94,7 @@ public class DatasetService {
         InfoCluster aux;
         for (int i = 0; i < info.length-1; i++) {
             for (int j = 0; j < info.length - i - 1; j++) {
-                if (info[j + 1].getPercentage() < info[j].getPercentage()) {
+                if (info[j + 1].getPercentage() > info[j].getPercentage()) {
                     aux = info[j + 1];
                     info[j + 1] = info[j];
                     info[j] = aux;
