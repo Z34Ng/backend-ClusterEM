@@ -129,15 +129,11 @@ public class DatasetService {
     */
     public static Evaluation buildEvalution (int nCluster, double[] clusXinst, Instances inst, String base64){        
         
-        Structure[] valInstances = getArrayStructure(inst,clusXinst);        
-        Structure[] invertido = new Structure[valInstances.length];
-        for (int i=0, j=valInstances.length-1; i<valInstances.length; i++, j--) 
-            invertido[j] = valInstances[i];
-        
+        Structure[] valInstances = getArrayStructure(inst,clusXinst);                         
         InfoCluster[] clusterStats = getInfoCluster(inst, clusXinst, nCluster);
         String[] attributes = getColumnsFromQuery();
         
-        return new Evaluation(invertido,attributes,clusterStats,base64);
+        return new Evaluation(valInstances,attributes,clusterStats,base64);
     }
     
     /**
