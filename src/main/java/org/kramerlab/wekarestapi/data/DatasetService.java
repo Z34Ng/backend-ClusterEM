@@ -163,10 +163,10 @@ public class DatasetService {
         
         try {  
             p2.setMasterPlot(capi.getPlotData("myplot"));            
-            p2.setSize(1000, 1000);            
-            p2.setXindex(3);
+            p2.setSize(1000, 800);                 
+            p2.setXindex(nameColums.length+1);
             p2.setYindex(0);
-            p2.setCindex(3);     
+            p2.setCindex(nameColums.length+1);     
             
             JComponentWriter.toOutput(new PNGWriter(), p2 , f);
         } catch (Exception ex) {
