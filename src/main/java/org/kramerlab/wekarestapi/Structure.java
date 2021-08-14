@@ -6,6 +6,6 @@ public class Structure {
     
     public Structure(Object[] vals, String n_cluster){
         this.instancia=vals;
-        vals[vals.length-1]=n_cluster;
+        vals[0]=n_cluster;
     }
 }
