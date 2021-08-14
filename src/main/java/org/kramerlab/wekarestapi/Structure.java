@@ -5,7 +5,8 @@ public class Structure {
     public Object[] instancia;
     
     public Structure(Object[] vals, String n_cluster){
-        this.instancia=vals;
-        vals[vals.length-1]=n_cluster;
+        instancia = new Object[vals.length+1];
+        instancia[0]=n_cluster;
+        System.arraycopy(vals, 0, instancia, 1, vals.length-1); 
     }
 }
