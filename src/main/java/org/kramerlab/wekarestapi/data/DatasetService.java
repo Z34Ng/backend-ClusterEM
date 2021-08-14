@@ -91,6 +91,17 @@ public class DatasetService {
             info[i]=new InfoCluster(stats[i],(Math.round(aux*100.0)/100.0),i+1);
         } 
         
+        InfoCluster aux;
+        for (int i = 0; i < info.length-1; i++) {
+            for (int j = 0; j < info.length - i - 1; j++) {
+                if (info[j + 1].getPercentage() < info[j].getPercentage()) {
+                    aux = info[j + 1];
+                    info[j + 1] = info[j];
+                    info[j] = aux;
+                }
+            }
+        }
+        
         return info;
     }    
     
