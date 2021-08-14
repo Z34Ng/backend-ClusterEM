@@ -70,8 +70,8 @@ public class DatasetService {
         Structure[] obj = new Structure[inst.numInstances()];   
                
         for(int i=0; i<inst.numInstances(); i++){
-            System.arraycopy(resultData[i], 0, aux, 0, inst.numAttributes());
-            obj[i]=new Structure(Arrays.copyOf(aux,aux.length+1),Utils.doubleToString(clusXinst[i]+1.0,0));
+            //System.arraycopy(resultData[i], 0, aux, 0, inst.numAttributes());
+            obj[i]=new Structure(Arrays.copyOf(resultData[i],resultData[i].length+1),Utils.doubleToString(clusXinst[i]+1.0,0));
         }
         return obj;
     }
