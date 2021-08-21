@@ -174,7 +174,7 @@ public class DatasetService {
         
         try {  
             p2.setMasterPlot(capi.getPlotData("myplot"));            
-            p2.setSize(1000, 800);                 
+            p2.setSize(1600, 800);                 
             p2.setXindex(nameColums.length+1);
             p2.setYindex(0);
             p2.setCindex(nameColums.length+1);     
