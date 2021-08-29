@@ -175,8 +175,8 @@ public class DatasetService {
         try {  
             p2.setMasterPlot(capi.getPlotData("myplot"));            
             p2.setSize(1200, 800);                 
-            p2.setXindex(nameColums.length+1);
-            p2.setYindex(0);
+            p2.setXindex(1);
+            p2.setYindex(4);
             p2.setCindex(nameColums.length+1);     
             
             JComponentWriter.toOutput(new PNGWriter(), p2 , f);
