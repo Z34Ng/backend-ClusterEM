@@ -4,7 +4,7 @@ The service provides to machine learning algorithm EM from the WEKA library :
 
 ## Quick start
 
-The REST service is based on the JAX-RS framework. 
+The REST service is based on the JAX-RS. 
 
 To run a local environment for exploring the web service, execute the following(in path from project):
 
