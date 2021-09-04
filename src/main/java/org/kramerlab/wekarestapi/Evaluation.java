@@ -2,15 +2,17 @@ package org.kramerlab.wekarestapi;
 
 public class Evaluation {
     Structure[] valsInstances;
-    String[] attributes;    
+    String[] attributes;
     InfoCluster[] infoCluster;
     String graph;
+    Object[][] AttSummaryPanel;
 
-    public Evaluation(Structure[] valsInstances, String[] attributes, InfoCluster[] infClus, String graph) {
+    public Evaluation(Structure[] valsInstances, String[] attributes, InfoCluster[] infClus, String graph, Object[][] AttSummaryPanel) {
         this.valsInstances = valsInstances;
-        this.attributes = attributes;
-        this.graph=graph;
+        this.attributes = attributes;        
         this.infoCluster = infClus;
+        this.AttSummaryPanel = AttSummaryPanel;
+        this.graph=graph;        
     }
 
     public Structure[] getValsInstances() {
