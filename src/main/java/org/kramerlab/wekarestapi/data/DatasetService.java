@@ -14,8 +14,10 @@ import org.kramerlab.wekarestapi.InfoCluster;
 import org.kramerlab.wekarestapi.Structure;
 
 import weka.core.Instances;
-import weka.clusterers.*;
 import weka.core.Utils;
+import weka.core.Attribute;
+import weka.core.AttributeStats;
+import weka.clusterers.*;
 import weka.experiment.InstanceQuery;
 import weka.gui.explorer.ClustererAssignmentsPlotInstances;
 import weka.gui.sql.ResultSetHelper;
