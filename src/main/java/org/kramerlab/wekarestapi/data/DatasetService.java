@@ -146,7 +146,7 @@ public class DatasetService {
         InfoCluster[] clusterStats = getInfoCluster(inst, clusXinst, nCluster);
         String[] attributes = getColumnsFromQuery();
         
-        AttributeStats attStats = inst.attributeStats(1);
+        AttributeStats attStats = inst.attributeStats(0);
         Attribute att = inst.attribute(0);
         Object[][] AttSummaryPanel = new Object[attStats.nominalCounts.length][4];
         for (int i = 0; i < attStats.nominalCounts.length; i++) {
