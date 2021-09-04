@@ -144,7 +144,17 @@ public class DatasetService {
         InfoCluster[] clusterStats = getInfoCluster(inst, clusXinst, nCluster);
         String[] attributes = getColumnsFromQuery();
         
-        return new Evaluation(valInstances,attributes,clusterStats,base64);
+        AttributeStats attStats = inst.attributeStats(1);
+        Attribute att = inst.attribute(0);
+        Object[][] AttSummaryPanel = new Object[attStats.nominalCounts.length][4];
+        for (int i = 0; i < attStats.nominalCounts.length; i++) {
+            AttSummaryPanel[i][0] = i + 1;
+            AttSummaryPanel[i][1] = att.value(i);
+            AttSummaryPanel[i][2] = attStats.nominalCounts[i];
+            AttSummaryPanel[i][3] = Utils.doubleToString(attStats.nominalWeights[i], 3);      
+        }
+        
+        return new Evaluation(valInstances,attributes,clusterStats,base64,AttSummaryPanel);
     }
     
     /**
@@ -174,10 +184,10 @@ public class DatasetService {
         
         try {  
             p2.setMasterPlot(capi.getPlotData("myplot"));            
-            p2.setSize(1200, 800);                 
+            p2.setSize(1164, 640);
             p2.setXindex(1);
-            p2.setYindex(4);
-            p2.setCindex(nameColums.length+1);     
+            p2.setYindex(nameColums.length+1);                        
+            p2.setCindex(nameColums.length+1);  
             
             JComponentWriter.toOutput(new PNGWriter(), p2 , f);
         } catch (Exception ex) {
