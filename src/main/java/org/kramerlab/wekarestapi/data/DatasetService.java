@@ -190,7 +190,7 @@ public class DatasetService {
             p2.setYindex(nameColums.length+1);                        
             p2.setCindex(nameColums.length+1);  
             
-            JComponentWriter.toOutput(new PNGWriter(), p2 , f);
+            //JComponentWriter.toOutput(new PNGWriter(), p2 , f);
         } catch (Exception ex) {
             Logger.getLogger(DatasetService.class.getName()).log(Level.SEVERE, null, ex);
         }                                                     
