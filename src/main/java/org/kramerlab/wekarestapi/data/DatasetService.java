@@ -148,12 +148,11 @@ public class DatasetService {
         
         AttributeStats attStats = inst.attributeStats(0);
         Attribute att = inst.attribute(0);
-        Object[][] AttSummaryPanel = new Object[attStats.nominalCounts.length][4];
+        Object[][] AttSummaryPanel = new Object[attStats.nominalCounts.length][3];
         for (int i = 0; i < attStats.nominalCounts.length; i++) {
             AttSummaryPanel[i][0] = i + 1;
             AttSummaryPanel[i][1] = att.value(i);
-            AttSummaryPanel[i][2] = attStats.nominalCounts[i];
-            AttSummaryPanel[i][3] = Utils.doubleToString(attStats.nominalWeights[i], 3);      
+            AttSummaryPanel[i][2] = attStats.nominalCounts[i];            
         }
         
         return new Evaluation(valInstances,attributes,clusterStats,base64,AttSummaryPanel);
